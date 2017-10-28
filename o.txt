@@ -1,0 +1,61 @@
+Declare a input file stream which we will use to read in the student data
+Open the file.  Student data is stored in studentData.txt
+Every time we read something in from the file, we'll store it inside of this variable
+Check if the file successfully opened....
+loop over each student times...
+i: 0
+i: 1
+i: 2
+i: 3
+i: 4
+i: 5
+i: 6
+i: 7
+i: 8
+i: 9
+i: 10
+i: 11
+i: 12
+i: 13
+i: 14
+i: 15
+i: 16
+i: 17
+i: 18
+i: 19
+i: 20
+i: 21
+i: 22
+i: 23
+i: 24
+i: 25
+i: 26
+Iterate over all the students.  Print out a user-friendly message for each attribute of the student.
+Utsab Saha has made 0 attempts and has an average of 0
+Austin Gray has made 0 attempts and has an average of 0
+Kayla Baum has made 0 attempts and has an average of 0
+Andrew Lin has made 0 attempts and has an average of 0
+Jason Magdaleno has made 0 attempts and has an average of 0
+Taryn Winfield has made 0 attempts and has an average of 0
+Alyssa Bray has made 0 attempts and has an average of 0
+AJ Samudio has made 0 attempts and has an average of 0
+Jose Damian has made 0 attempts and has an average of 0
+Rosario Araujo has made 0 attempts and has an average of 0
+Joshua Byun has made 0 attempts and has an average of 0
+Vaibhav Chikkala has made 0 attempts and has an average of 0
+Ty Cabanilla has made 0 attempts and has an average of 0
+Arnold Okumagba has made 0 attempts and has an average of 0
+Chris Jimenez has made 0 attempts and has an average of 0
+Maximillian Renga has made 0 attempts and has an average of 0
+Irene Pedroza has made 0 attempts and has an average of 0
+Elodie Lam has made 0 attempts and has an average of 0
+Patrick Breckinridge has made 0 attempts and has an average of 0
+Robert O’Connell has made 0 attempts and has an average of 0
+Edgar Paramo has made 0 attempts and has an average of 0
+Brandon Myers has made 0 attempts and has an average of 0
+Isidro Perez has made 0 attempts and has an average of 0
+Mohammad Adnan has made 0 attempts and has an average of 0
+Diana Garcia has made 0 attempts and has an average of 0
+Cammron Keehley has made 0 attempts and has an average of 0
+Adekunle olalemi has made 0 attempts and has an average of 0
+Close the input file stream
