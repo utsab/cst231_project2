@@ -34,6 +34,8 @@ void writeStudentsToFile(student allStudents[], int numStudents) {
         writeStudentDataFile << allStudents[i].firstName << " " << allStudents[i].lastName << " " 
                              << allStudents[i].numAttempts << " " << allStudents[i].average << endl; 
     }
+    
+    writeStudentDataFile.close();
 }
 
 // return list[rand()%n];
@@ -44,9 +46,11 @@ student pickRandomStudent(student list[], int n) {
     
     
     r1 = rand()%n; // Pick r1 randomly between 0 and n-1
-    picked = list[r1]; // assing the random entry from the array in the picked variable
+    picked = list[r1]; // accessing the random entry from the array in the picked variable
     return picked; // return the picked variable
 }
+
+
 
 int main() {
     
@@ -81,18 +85,32 @@ int main() {
      }
      
      
-     // printStudents(allStudents, numStudents); 
-     //writeStudentsToFile(allStudents, numStudents); 
-     
     // Randomize somehow and pick one student
-    rStudent = pickRandomStudent(allStudents, numStudents);
     
-    //Print the student name
-    cout << "Student name: " << rStudent.firstName << " " << rStudent.lastName << endl;
-     
-     
      cout << "Close the input file stream" << endl; 
      myReadFile.close();
+     
+     
+     // show a menu with two items: 1) List all students with averages  2) Pick a random student
+     
+     char choice; 
+     
+     cout << "*********************************************" << endl 
+          << "Choose from the following options: " << endl
+          << "1) Show all student averages " << endl
+          << "2) Pick a random student " << endl
+          << "*********************************************" << endl; 
     
+     cin >> choice; 
+     
+     if (choice == '1') {
+       printStudents(allStudents, numStudents);   
+     }  else if (choice == '2') {
+        rStudent = pickRandomStudent(allStudents, numStudents);
+        cout << "Student name: " << rStudent.firstName << " " << rStudent.lastName << endl;
+     } else  {
+         cout << "That is not a valid option" << endl; 
+     }
+     
     return 0; 
 }
