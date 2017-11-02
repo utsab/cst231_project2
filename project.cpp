@@ -26,6 +26,27 @@ void printAllStudents(student allStudents[], int numStudents) {
     }
 }
 
+void searchForStudentByFirstName(student allStudents[], int numStudents) {
+    
+    string targetName = ""; 
+    
+    cout << "Enter first name of student: " << endl; 
+    cin >> targetName; 
+    
+    for (int i = 0; i < numStudents; i++) {
+        if (targetName == allStudents[i].firstName) {
+            cout << allStudents[i].firstName << " " << allStudents[i].lastName
+             << " has made " << allStudents[i].numAttempts << " attempts and has an average of "
+             << allStudents[i].average << endl; 
+             
+             return; 
+        }
+    }
+    
+    cout << "Cannot find student" << endl; 
+}
+
+
 
 void readStudentsFromFile(student allStudents[], int numStudents) {
     cout << "Declare a input file stream which we will use to read in the student data" << endl; 
@@ -169,13 +190,17 @@ void showMenu (student sArray[], int num) {
     char choice;
     while (true) {
         // Print the menu option I want to provide
-        cout << "1 - Print all student info" << endl << "2 - Pick Random Student to Engage" << endl << "q - Quit" << endl;
+        cout << "1 - Print all student info" << endl 
+             << "2 - Pick Random Student to Engage" << endl 
+             << "3 - Search for student by first name" << endl
+             << "q - Quit" << endl;
         cout << "Enter your choice you esteemed user: ";
         // Read user input
         cin >> choice;
         // Based on the input - call different functions to have different responses
         // 1 -> printAllStudents
         // 2 -> pickRandomStudent
+        // 3 -> searchForStudentByFirstName
         // q - return - get out
         // anything else in the input - print an error and go back to get an input again
         if (choice == '1') {
@@ -184,6 +209,8 @@ void showMenu (student sArray[], int num) {
                     pickRandomStudent(sArray, num);
                 else if (choice == 'q')
                         return;
+                      else if (choice == '3')
+                         searchForStudentByFirstName(sArray, num); 
                     else 
                         cout << "I don't understand the choice" << endl;
         }
