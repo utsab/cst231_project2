@@ -26,9 +26,33 @@ void printAllStudents(student allStudents[], int numStudents) {
     }
 }
 
+// Version 1: prints name of the first matching student and then exits
+// void searchForStudentByFirstName(student allStudents[], int numStudents) {
+    
+//     string targetName = ""; 
+    
+//     cout << "Enter first name of student: " << endl; 
+//     cin >> targetName; 
+    
+//     for (int i = 0; i < numStudents; i++) {
+//         if (targetName == allStudents[i].firstName) {
+//             cout << allStudents[i].firstName << " " << allStudents[i].lastName
+//              << " has made " << allStudents[i].numAttempts << " attempts and has an average of "
+//              << allStudents[i].average << endl; 
+             
+//              return; 
+//         }
+//     }
+    
+//     cout << "Cannot find student" << endl; 
+// }
+
+
+// Version 2: Prints all matching students
 void searchForStudentByFirstName(student allStudents[], int numStudents) {
     
     string targetName = ""; 
+    bool isMatchFound = false; 
     
     cout << "Enter first name of student: " << endl; 
     cin >> targetName; 
@@ -39,11 +63,37 @@ void searchForStudentByFirstName(student allStudents[], int numStudents) {
              << " has made " << allStudents[i].numAttempts << " attempts and has an average of "
              << allStudents[i].average << endl; 
              
-             return; 
+            isMatchFound = true; 
         }
     }
     
-    cout << "Cannot find student" << endl; 
+    if (!isMatchFound) {
+        cout << "Cannot find student" << endl; 
+    }
+}
+
+
+void searchForStudentByLastName(student allStudents[], int numStudents) {
+    
+    string targetName = ""; 
+    bool isMatchFound = false; 
+    
+    cout << "Enter last name of student: " << endl; 
+    cin >> targetName; 
+    
+    for (int i = 0; i < numStudents; i++) {
+        if (targetName == allStudents[i].lastName) {
+            cout << allStudents[i].firstName << " " << allStudents[i].lastName
+             << " has made " << allStudents[i].numAttempts << " attempts and has an average of "
+             << allStudents[i].average << endl; 
+             
+            isMatchFound = true; 
+        }
+    }
+    
+    if (!isMatchFound) {
+        cout << "Cannot find student" << endl; 
+    }
 }
 
 
@@ -193,6 +243,7 @@ void showMenu (student sArray[], int num) {
         cout << "1 - Print all student info" << endl 
              << "2 - Pick Random Student to Engage" << endl 
              << "3 - Search for student by first name" << endl
+             << "4 - Search for student by last name" << endl
              << "q - Quit" << endl;
         cout << "Enter your choice you esteemed user: ";
         // Read user input
@@ -210,15 +261,17 @@ void showMenu (student sArray[], int num) {
                 else if (choice == 'q')
                         return;
                       else if (choice == '3')
-                         searchForStudentByFirstName(sArray, num); 
-                    else 
-                        cout << "I don't understand the choice" << endl;
+                                searchForStudentByFirstName(sArray, num); 
+                           else if (choice == '4')
+                                    searchForStudentByLastName(sArray, num); 
+                                else 
+                                    cout << "I don't understand the choice" << endl;
         }
 }
 
 int main() {
     
-    const int numStudents = 27; 
+    const int numStudents = 28; 
     student allStudents[numStudents];
     readStudentsFromFile(allStudents, numStudents); 
     
